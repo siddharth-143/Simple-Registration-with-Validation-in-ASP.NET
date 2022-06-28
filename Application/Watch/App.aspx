@@ -48,6 +48,20 @@
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
             </div>
         </div>
+        <hr />
+        <asp:GridView ID="GridView1" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White"
+            RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" AlternatingRowStyle-ForeColor="#000"
+            AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="Name" HeaderText="File Name" />
+                <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lnkDownload" runat="server" Text="Download" OnClick="DownloadFile"
+                            CommandArgument='<%# Eval("Id") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
         <!-- Sign Up end -->
     </form>
 </body>
